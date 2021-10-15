@@ -6,19 +6,16 @@
 /*   By: kevyn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 13:34:29 by kevyn             #+#    #+#             */
-/*   Updated: 2021/10/15 16:39:58 by kevyn            ###   ########.fr       */
+/*   Updated: 2021/10/15 16:43:06 by kevyn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
-#include <stdio.h>
-
 void	ft_bzero(void *s, size_t n)
 {
-	int	i;
-	char 	*str;
+	int		i;
+	char	*str;
+
 	str = s;
-	
 	i = 0;
 	while (i < n)
 	{
