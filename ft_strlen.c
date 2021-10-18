@@ -6,11 +6,11 @@
 /*   By: kevyn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 12:30:19 by kevyn             #+#    #+#             */
-/*   Updated: 2021/10/14 12:30:52 by kevyn            ###   ########.fr       */
+/*   Updated: 2021/10/18 09:39:19 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	i;
 
