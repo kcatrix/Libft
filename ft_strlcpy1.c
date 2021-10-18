@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kevyn <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: kcatrix <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/14 16:51:32 by kevyn             #+#    #+#             */
-/*   Updated: 2021/10/18 13:24:42 by kcatrix          ###   ########.fr       */
+/*   Created: 2021/10/18 13:31:00 by kcatrix           #+#    #+#             */
+/*   Updated: 2021/10/18 13:35:36 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(char *str, int c, int len)
+size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize)
 {
-	int	i;
+	
+}
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		while (i < len)
-		{
-			str[i] = c;
-			i++;
-		}
-		i++;
-	}
-	return (str);
+int main()
+{
+
 }
