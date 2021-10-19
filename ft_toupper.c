@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kcatrix <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 15:22:30 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/19 10:31:56 by kcatrix          ###   ########.fr       */
+/*   Created: 2021/10/19 13:40:19 by kcatrix           #+#    #+#             */
+/*   Updated: 2021/10/19 14:03:03 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <ctype.h>
+#include <stdio.h>
 
-char	*ft_strdup(const char *s1)
+int	ft_toupper(int c)
 {
-	int		i;
-	char	*s2;
-
-	i = 0;
-	while (s1[i] != '\0')
-	{
-		i++;
-	}
-	s2 = malloc(i * sizeof(char) + 1);
-	i = 0;
-	while (s1[i])
-	{
-		s2[i] = s1[i];
-		i++;
-	}
-	return (s2);
+	if ((c <= 122) && (c >= 97))
+		c -= 32;
+	return (c);
 }

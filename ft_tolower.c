@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kcatrix <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 13:31:00 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/18 13:35:36 by kcatrix          ###   ########.fr       */
+/*   Created: 2021/10/19 14:03:45 by kcatrix           #+#    #+#             */
+/*   Updated: 2021/10/19 14:10:01 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize)
-{
-	
-}
+#include <stdio.h>
 
-int main()
+int	ft_tolower(int c)
 {
-
+	if ((c <= 'Z') && (c >= 'A'))
+		c += 32;
+	return (c);
 }

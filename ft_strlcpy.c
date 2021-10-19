@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kcatrix <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 15:22:30 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/19 10:31:56 by kcatrix          ###   ########.fr       */
+/*   Created: 2021/10/18 13:31:00 by kcatrix           #+#    #+#             */
+/*   Updated: 2021/10/19 11:20:59 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <string.h>
 
-char	*ft_strdup(const char *s1)
+size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t d)
 {
-	int		i;
-	char	*s2;
+	int	i;
+	int	len;
 
 	i = 0;
-	while (s1[i] != '\0')
+	len = 0;
+	while (src[len] != '\0')
 	{
+		len++;
+	}
+	while ((src[i] != '\0') && (i < (d - 1)))
+	{
+		dst[i] = src[i];
 		i++;
 	}
-	s2 = malloc(i * sizeof(char) + 1);
-	i = 0;
-	while (s1[i])
-	{
-		s2[i] = s1[i];
-		i++;
-	}
-	return (s2);
+	dst[i] = '\0';
+	return (len);
 }

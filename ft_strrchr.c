@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kcatrix <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 15:22:30 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/19 10:31:56 by kcatrix          ###   ########.fr       */
+/*   Created: 2021/10/19 15:24:32 by kcatrix           #+#    #+#             */
+/*   Updated: 2021/10/19 15:54:40 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 
-char	*ft_strdup(const char *s1)
+char *ft_strrchr(const char *s, int c)
 {
-	int		i;
-	char	*s2;
+	int i;
+	int y;
 
 	i = 0;
-	while (s1[i] != '\0')
+	y = 0;
+	while (s[y] != '\0')
+		y++;
+	i = y;
+	while(!(i < 0))
 	{
-		i++;
+		if (s[i] == c)
+			return((char*)s + i);
+		i--;
 	}
-	s2 = malloc(i * sizeof(char) + 1);
-	i = 0;
-	while (s1[i])
-	{
-		s2[i] = s1[i];
-		i++;
-	}
-	return (s2);
+	return(NULL);
 }

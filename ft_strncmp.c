@@ -6,13 +6,13 @@
 /*   By: kcatrix <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 16:22:18 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/18 16:32:49 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/19 10:39:40 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	if (n == 0)

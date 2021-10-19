@@ -6,20 +6,20 @@
 /*   By: kevyn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 16:51:32 by kevyn             #+#    #+#             */
-/*   Updated: 2021/10/18 13:24:42 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/19 09:06:03 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(char *str, int c, int len)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (b[i] != '\0')
 	{
 		while (i < len)
 		{
-			str[i] = c;
+			b[i] = c;
 			i++;
 		}
 		i++;

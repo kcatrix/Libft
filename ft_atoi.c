@@ -3,48 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kcatrix <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: tnicoue <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 14:24:06 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/18 15:18:10 by kcatrix          ###   ########.fr       */
+/*   Created: 2021/10/18 13:33:53 by tnicoue           #+#    #+#             */
+/*   Updated: 2021/10/19 10:23:21 by tnicoue          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+#include <stdlib.h>
+#include <stdio.h>
+
+int	ft_atoi(const char *str)
 {
 	int	i;
-	int	neg;
-	int num;
-	int cmp;
+	int	signe;
+	int	result;
+	int	x;
 
-	neg = 1;
-	num = 0;
 	i = 0;
-	cmp = 0;
-
-	while((str[i] >= 9 && str[i] <= 13 ) || (str[i] == 32))
+	signe = 1;
+	x = 0;
+	result = 0;
+	while (str[i] == '-' || str[i] == '+')
 	{
-		i++;
-	}
-	while((str[i] == '-') || (str[i] == '+'))
-	{
-		if (cmp > 1)
-			return (0);
 		if (str[i] == '-')
-		{
-			neg *= -1;
-			cmp++;
-		}
-		if (str[i] == '+')
-			if (cmp > 1)
-				return (0);
-			cmp++;
+			signe *= -1;
 		i++;
+		x++;
+		if (x > 1)
+			return (0);
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		num = num * 10 + (str[i] - '0');
+		result = result * 10 + (str[i] - '0');
 		i++;
 	}
-	return (num * neg);
+	return (result * signe);
 }
