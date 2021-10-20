@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 10:47:55 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/19 13:39:10 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/20 17:03:25 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t d)
 {
-	int	i;
-	int	len;
-	int	len2;
-	int	len3;
+	size_t	i;
+	size_t	len;
+	int		len2;
+	int		len3;
 
 	i = 0;
 	len = 0;

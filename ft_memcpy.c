@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 09:48:44 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/20 13:39:36 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/20 17:06:13 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,4 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	dsti[i] = '\0';
 	return(dst);
-}
-
-int main()
-{
-    char	tabdes[50];
-	char	tabdes2[50];
-    char    tab[] = "jesuislachaine";
-	printf("%s\n", memcpy(tabdes, tab, 10));
-	printf("%s\n", ft_memcpy(tabdes2, tab, 10));
 }

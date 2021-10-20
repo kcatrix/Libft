@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 13:03:54 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/20 13:29:20 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/20 17:06:22 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,4 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 	
 	dsti[i] = '\0';
 	return (dst);
-}
-int main()
-{
-    char	tabdes[50] = "jesuisladest";
-	char	tabdes2[50] = "jesuisladest";
-    char    tab[] = "nonrien";
-	printf("%s\n", memmove(tabdes, tab, 5));
-	printf("%s\n", ft_memmove(tabdes2, tab, 5));
 }
