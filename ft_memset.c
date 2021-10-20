@@ -3,26 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kevyn <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 16:51:32 by kevyn             #+#    #+#             */
-/*   Updated: 2021/10/19 09:06:03 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/20 14:30:17 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, size_t len)
-{
-	int	i;
+#include <unistd.h>
+#include <stdio.h>
 
-	i = 0;
-	while (b[i] != '\0')
-	{
-		while (i < len)
-		{
-			b[i] = c;
-			i++;
-		}
-		i++;
-	}
-	return (str);
+void    *ft_memset(void *b, int c, size_t len)
+{
+    int i;
+    char *k;
+    i = 0;
+    k = (char *) b;
+    if (b == NULL)
+        return (NULL);
+    while (len != 0)
+    {
+        k[i] = (char) c;
+        i++;
+        len--;
+    }
+    return (k);
 }
