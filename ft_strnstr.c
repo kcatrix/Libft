@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 15:56:21 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/21 14:35:51 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/21 17:24:16 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strnstr(const char *str, const char *find, size_t len)
 	y = 0;
 	stri = (char *)str;
 	findi = (char *)find;
+	if (findi[y] == '\0')
+		return (stri);
 	while ((stri[i] != '\0') && (findi[y] != '\0') && (i < len))
 	{
 		if (findi[y] == stri[i])

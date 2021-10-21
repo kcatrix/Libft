@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 16:22:18 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/21 14:49:59 by kcatrix          ###   ########.fr       */
+/*   Created: 2021/10/21 16:14:20 by kcatrix           #+#    #+#             */
+/*   Updated: 2021/10/21 17:09:07 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void *ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned int	i;
+	size_t 	i;
+	int 	k;
+	char	*str;
 
+	str = (char *)s;
 	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && i < n - 1)
+	k = 0;
+	while(str[i] != '\0' && i < n)
+	{	
+		if (str[i] == c)
+		{
+			while(str[i] != '\0')
+			{
+				str[k] = str[i];
+				i++;
+				k++;
+			}			
+		}
 		i++;
-	return (s1[i] - s2[i]);
+	}str[k] = '\0';
+	return (str);
 }
