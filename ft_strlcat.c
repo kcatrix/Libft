@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 10:47:55 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/21 13:04:54 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/21 14:00:14 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t d)
 {
 	size_t	i;
 	size_t	lensrc;
-	size_t		lendst;
+	size_t	lendst;
 	size_t	lendst2;
 
 	i = 0;
@@ -27,24 +27,17 @@ size_t	ft_strlcat(char *dst, const char *src, size_t d)
 	while (dst[lendst] != '\0')
 		lendst++;
 	lendst2 = lendst;
-	while (lendst2 != '\0' && i < d)
+	while (src[i] != '\0' && lendst2 < (d - 1))
 	{
-		dst[lendst2] = src[lendst2];
+		dst[lendst2] = src[i];
 		i++;
 		lendst2++;
 	}
-	
-	if (lensrc == d)
-		lensrc -= 1;
 	dst[lendst2] = '\0';
-	return(lensrc + d);
-	
-}
-
-int main()
-{
-	char	tabdest[] = "jesuislachainedesti";
-	char	tabsrc[] = "jesuislachainesrc";
-	printf(" original = %zu\n", strlcat(tabdest, tabsrc, 20));
-	printf(" CPY = %zu\n", ft_strlcat(tabdest, tabsrc, 20));
+	if ((lendst + 1) == d)
+		return(lensrc + lendst);
+	else if (lendst < d)
+		return (lensrc + lendst);
+	else
+		return (lensrc + d);
 }
