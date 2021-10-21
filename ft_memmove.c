@@ -6,22 +6,20 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 13:03:54 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/20 17:06:22 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/21 11:01:41 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t i;
+	size_t			i;
 	unsigned char	*srci;
-	unsigned char	*dsti; 
+	unsigned char	*dsti;
 
 	srci = (unsigned char *)src;
 	dsti = (unsigned char *)dst;
-
 	i = 0;
 	while (srci[i] != '\0' && i < len)
 	{
@@ -32,7 +30,6 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 	{
 		i++;
 	}
-	
 	dsti[i] = '\0';
 	return (dst);
 }

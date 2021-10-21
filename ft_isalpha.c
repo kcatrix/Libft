@@ -6,11 +6,13 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 14:47:30 by kevyn             #+#    #+#             */
-/*   Updated: 2021/10/19 16:24:54 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/21 11:04:00 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char c)
+#include "libft.h"
+
+int	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);

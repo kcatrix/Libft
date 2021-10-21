@@ -6,23 +6,22 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:10:33 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/19 15:33:36 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/21 11:01:54 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
 		if (s[i] == c)
-			return((char*)&s[i]);
+			return ((char *) & s[i]);
 		i++;
 	}
-	return(NULL);
+	return (NULL);
 }

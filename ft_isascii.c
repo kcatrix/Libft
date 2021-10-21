@@ -6,12 +6,11 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 15:23:51 by kevyn             #+#    #+#             */
-/*   Updated: 2021/10/19 15:39:38 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/21 11:02:02 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_isascii(int c)
 {

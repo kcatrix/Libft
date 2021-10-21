@@ -6,17 +6,16 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 15:56:21 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/20 15:34:25 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/21 10:34:36 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *str, const char *find, size_t len)
 {
 	size_t	i;
-	int y;
+	int		y;
 	char	*stri;
 	char	*findi;
 
@@ -29,7 +28,7 @@ char	*ft_strnstr(const char *str, const char *find, size_t len)
 		{
 			y++;
 			if (findi[y] == '\0')
-				return(&stri[i - y + 1]);
+				return (& stri[i - y + 1]);
 		}
 		else
 			y = 0;

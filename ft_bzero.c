@@ -6,12 +6,11 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 13:34:29 by kevyn             #+#    #+#             */
-/*   Updated: 2021/10/20 17:00:57 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/21 11:01:25 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

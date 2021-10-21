@@ -6,12 +6,11 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 13:40:19 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/19 14:03:03 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/21 10:33:48 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_toupper(int c)
 {

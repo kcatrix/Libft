@@ -1,13 +1,13 @@
 CC=gcc
 CFLAGS= -Wall -Wextra -Werror
-EXEC=hello
+NAME = libft.a
 SRC= $(wildcard *.c)
 OBJ= $(SRC:.c=.o)
 
-all: $(EXEC)
+all: ${NAME}
 
-hello: $(OBJ)
-	$(CC) -o $@ $^
+${NAME}: $(OBJ)
+	ar rc $(NAME) $(OBJ)
 
 %.o: %.c
 	$(CC) -o $@ -c $< $(CFLAGS)

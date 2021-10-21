@@ -6,13 +6,13 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 13:31:00 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/20 17:04:41 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/21 10:22:00 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t d)
+size_t	ft_strlcpy(char *dst, const char *src, size_t d)
 {
 	size_t	i;
 	int		len;
@@ -31,3 +31,4 @@ size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t d)
 	dst[i] = '\0';
 	return (len);
 }
+

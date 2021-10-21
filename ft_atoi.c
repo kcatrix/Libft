@@ -6,12 +6,11 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 13:33:53 by tnicoue           #+#    #+#             */
-/*   Updated: 2021/10/20 17:23:29 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/21 10:35:04 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
