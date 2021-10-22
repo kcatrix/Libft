@@ -6,30 +6,35 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 13:03:54 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/21 11:01:41 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/22 10:40:12 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t			i;
-	unsigned char	*srci;
-	unsigned char	*dsti;
+	size_t	i;
+	char	*srci;
+	char	*dsti;
 
-	srci = (unsigned char *)src;
-	dsti = (unsigned char *)dst;
+	srci = (char *)src;
+	dsti = (char *)dst;
 	i = 0;
-	while (srci[i] != '\0' && i < len)
+	if (dst > src)
 	{
-		dsti[i] = srci[i];
-		i++;
+		while (len > 0)
+		{
+			dsti[len - 1] = srci[len - 1];
+			len--;
+		}
 	}
-	while (dsti[i] != '\0')
-	{
-		i++;
-	}
-	dsti[i] = '\0';
+	else
+		while (i < len)
+		{
+			dsti[i] = srci[i];
+			i++;
+		}
 	return (dst);
 }

@@ -1,21 +1,23 @@
-CC=gcc
-CFLAGS= -Wall -Wextra -Werror
-NAME = libft.a
-SRC= $(wildcard *.c)
-OBJ= $(SRC:.c=.o)
+CC		= gcc
+CFLAGS	= -Wall -Wextra -Werror
+NAME 	= libft.a
+SRC		= $(wildcard *.c)
+OBJ		= $(SRC:.c=.o)
 
 all: ${NAME}
-
-${NAME}: $(OBJ)
-	ar rc $(NAME) $(OBJ)
 
 %.o: %.c
 	$(CC) -o $@ -c $< $(CFLAGS)
 
-.PHONY: clean mrproper
+${NAME}: $(OBJ)
+	ar rc $(NAME) $(OBJ)
 
 clean:
-	rm -rf *.o
+	rm -rf $(OBJ)
 
-mrproper: clean
+fclean: clean
 	rm -rf $(EXEC)
+
+re: fclean all 
+
+.PHONY: clean fclean
