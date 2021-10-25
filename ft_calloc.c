@@ -1,42 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 13:33:53 by tnicoue           #+#    #+#             */
-/*   Updated: 2021/10/25 16:52:46 by kcatrix          ###   ########.fr       */
+/*   Created: 2021/10/25 16:58:19 by kcatrix           #+#    #+#             */
+/*   Updated: 2021/10/25 17:16:37 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int	i;
-	int	signe;
-	int	result;
-	int	x;
+	int 	i;
+	char	*str;
 
 	i = 0;
-	signe = 1;
-	x = 0;
-	result = 0;
-	while (str[i] == 32 || (str[i] >= 9 && (str[i] <= 13)))
-		i++;	
-	if (str[i] == '-' || str[i] == '+')
+	str = malloc(size * count);
+	while (str[i] != '\0')
 	{
-		if (str[i] == '-')
-			signe *= -1;
+		str[i] = 0;
 		i++;
 	}
-	if (!(str[i] >= '0' && str[i] <= '9'))
-		return (0);
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-	return (result * signe);
+	return (str);
 }

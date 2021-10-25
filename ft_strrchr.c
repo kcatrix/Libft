@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 15:24:32 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/21 10:33:51 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/25 11:19:38 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ char	*ft_strrchr(const char *s, int c)
 	while (s[y] != '\0')
 		y++;
 	i = y;
+	if (c == '\0')
+		return ((char *)s + i);
 	while (!(i < 0))
 	{
-		if (s[i] == c)
+		if (s[i] == (const char) c)
 			return ((char *)s + i);
 		i--;
 	}
