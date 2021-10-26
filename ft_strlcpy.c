@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 13:31:00 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/25 13:35:42 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/26 08:38:02 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t d)
 		len++;
 	}
 	if (d == 0)
-		return(len);
+		return (len);
 	while ((src[i] != '\0') && (i < d - 1))
 	{
 		dst[i] = src[i];

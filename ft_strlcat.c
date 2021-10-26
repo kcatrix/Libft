@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 10:47:55 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/25 14:30:04 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/26 08:39:17 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t d)
 		lendst++;
 	lendst2 = lendst;
 	if (d <= lendst)
-		return(lensrc + d);
+		return (lensrc + d);
 	while (src[i] != '\0' && lendst2 < (d - 1))
 	{
 		dst[lendst2] = src[i];
@@ -38,4 +38,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t d)
 	dst[lendst2] = '\0';
 	return (lensrc + lendst);
 }
-	

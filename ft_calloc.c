@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 16:58:19 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/25 17:39:41 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/26 08:44:29 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	int 	i;
+	int		i;
 	char	*str;
 
 	i = 0;

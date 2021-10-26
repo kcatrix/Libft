@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 13:33:53 by tnicoue           #+#    #+#             */
-/*   Updated: 2021/10/25 16:52:46 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/26 08:44:58 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_atoi(const char *str)
 	x = 0;
 	result = 0;
 	while (str[i] == 32 || (str[i] >= 9 && (str[i] <= 13)))
-		i++;	
+		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')

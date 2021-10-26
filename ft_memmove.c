@@ -6,10 +6,9 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 13:03:54 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/22 10:40:12 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/26 08:41:25 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
@@ -31,10 +30,12 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		}
 	}
 	else
+	{
 		while (i < len)
 		{
 			dsti[i] = srci[i];
 			i++;
 		}
+	}
 	return (dst);
 }

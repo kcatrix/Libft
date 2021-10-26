@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:10:33 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/25 14:40:13 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/26 08:39:52 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ char	*ft_strchr(const char *s, int c)
 		i++;
 	}
 	if (s[i] == (char) c)
-			return ((char *) & s[i]);
+		return ((char *) & s[i]);
 	return (0);
 }

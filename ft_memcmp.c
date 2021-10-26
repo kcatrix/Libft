@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 15:09:22 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/25 09:12:53 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/26 08:42:07 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,4 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		n--;
 	}
 	return (*str - *str2);
-
 }
