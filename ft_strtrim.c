@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 15:56:21 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/26 14:09:00 by kcatrix          ###   ########.fr       */
+/*   Created: 2021/10/26 14:30:54 by kcatrix           #+#    #+#             */
+/*   Updated: 2021/10/26 16:04:16 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strtrim(const char *s1, const char *set)
 {
-	size_t	i;
-	int		j;
+	int		size;
 
-	i = 0;
-	j = 0;
-	while (haystack[i] != '\0' && needle[j] != '\0' && i < len)
-	{
-		if (haystack[i] == needle[j])
-			j++;
-		else
-		{
-			i = i - j;
-			j = 0;
-		}
-		i++;
-	}
-	if (needle[j] == '\0')
-		return ((char *)(haystack + i - j));
-	return (0);
+	if (!s1 || !set)
+		return (NULL);
+	while (*s1 && ft_strchr(set, *s1)) // Parcours de chaine
+		s1++;
+	size = ft_strlen(s1);
+	while (size && ft_strchr(set, s1[size])) // R Parcours de chaine 
+		size--;
+	return (ft_substr(s1, 0, size + 1)); // Permet de malloc 
 }
