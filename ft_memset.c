@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 16:51:32 by kevyn             #+#    #+#             */
-/*   Updated: 2021/10/21 11:01:39 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/28 13:23:58 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	*ft_memset(void *b, int c, size_t len)
 
 	i = 0;
 	k = (char *) b;
-	if (b == NULL)
-		return (NULL);
 	while (len != 0)
 	{
 		k[i] = (char) c;

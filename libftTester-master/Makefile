@@ -3,12 +3,10 @@ UTILS			= $(addprefix utils/, sigsegv.cpp color.cpp check.cpp leaks.cpp)
 PARENT_DIR		= $(shell dirname $(shell pwd))
 LIBFT_PATH		= $(PARENT_DIR)
 TESTS_PATH		= tests/
-MANDATORY		= itoa strmapi striteri split putchar_fd putstr_fd \
-				putendl_fd putnbr_fd 
 
-MANDATORY_FULL = memset bzero memcpy memmove memchr memcmp strlen isalpha isdigit isalnum \
+MANDATORY =     split memset bzero memcpy memmove memchr memcmp strlen isalpha isdigit isalnum \
 				isascii isprint toupper tolower strchr strrchr strncmp strlcpy strlcat strnstr \
-				atoi calloc strdup substr strjoin strtrim split itoa strmapi putchar_fd putstr_fd \
+				atoi calloc strdup substr strjoin strtrim itoa strmapi putchar_fd putstr_fd \
 				putendl_fd putnbr_fd striteri
 				
 BONUS			= lstnew lstadd_front lstsize lstlast lstadd_back lstdelone lstclear lstiter lstmap

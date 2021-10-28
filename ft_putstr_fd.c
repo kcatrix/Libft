@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/27 18:47:18 by kevyn             #+#    #+#             */
-/*   Updated: 2021/10/28 14:19:05 by kcatrix          ###   ########.fr       */
+/*   Created: 2021/10/28 08:57:40 by kcatrix           #+#    #+#             */
+/*   Updated: 2021/10/28 14:35:26 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+#include "libft.h"
+
+void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
 	i = 0;
-	while (s[i])
+	while (s[i] != '\0')
 	{
-		(*f)(i, &s[i]);
+		write(fd, &s[i], 1);
 		i++;
 	}
 }

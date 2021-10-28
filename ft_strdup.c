@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 15:22:30 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/25 17:18:13 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/28 14:01:34 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strdup(const char *s1)
 		i++;
 	}
 	s2 = malloc(i * sizeof(char) + 1);
+	if (!s2)
+		return (NULL);
 	i = 0;
 	while (s1[i])
 	{

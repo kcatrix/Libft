@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 14:11:40 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/26 14:29:19 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/28 14:48:33 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (s2[j])
 		j++;
 	str = malloc(sizeof(*s1) * (i + j + 1));
+	if (!str)
+		return (NULL);
 	i = 0;
 	j = 0;
 	while (s1[i])
