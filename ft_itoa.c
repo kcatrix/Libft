@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 08:42:00 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/29 13:55:52 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/29 14:17:09 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ static int	len(long nb)
 	}
 	return (len);
 }
-static char *ft_assembleur(char *str, long n, int i)
+
+static char	*ft_assembleur(char *str, long n, int i)
 {
 	if (!str)
 		return (NULL);
@@ -53,6 +54,7 @@ static char *ft_assembleur(char *str, long n, int i)
 	}
 	return (str);
 }
+
 char	*ft_itoa(int nb)
 {
 	char	*str;

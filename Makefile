@@ -15,17 +15,18 @@ OBJ		= $(SRC:.c=.o)
 all: ${NAME}
 
 %.o: %.c
-	$(CC) -o $@ -c $< $(CFLAGS)
+	$(CC) -o $@ -c $< $(CFLAGS) -I
 
 ${NAME}: $(OBJ)
 	ar rc $(NAME) $(OBJ)
+	ranlib $(NAME)
 
 clean:
 	rm -rf $(OBJ)
 
 fclean: clean
-	rm -rf $(EXEC)
+	rm -rf $(NAME)
 
 re: fclean all 
 
-.PHONY: clean fclean
+.PHONY: clean fclean re
