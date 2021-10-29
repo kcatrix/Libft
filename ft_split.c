@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 15:24:50 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/29 11:42:45 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/29 13:37:11 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	cmp_nb_word(const char *s, char c)
 {
 	int	i;
 	int	word;
-	
+
 	if (!s)
 		return (0);
 	word = 0;
@@ -36,7 +36,7 @@ static int	cmp_nb_word(const char *s, char c)
 	return (word);
 }
 
-void	cmp_nb_caract(const char *s, char c, char **str)
+int	cmp_nb_caract(const char *s, char c, char **str)
 {
 	int		n;
 	int		i;
@@ -55,29 +55,26 @@ void	cmp_nb_caract(const char *s, char c, char **str)
 			n++;
 		}
 		str[m] = malloc(sizeof(char) * (n + 1));
+		if (!str)
+			return (0);
 		m++;
 		n = 0;
 		while (s[i] == c && s[i] != '\0')
 			i++;
 	}
+	return (0);
 }
-char	**ft_split(char const *s, char c)
+
+void	ft_assembleall(char const *s, char c, char **str)
 {
-	char	**str;
-	int 	i;
-	int 	m;
-	int 	mm;
+	int	i;
+	int	m;
+	int	mm;
 
 	i = 0;
 	m = 0;
 	mm = 0;
-	if (!s)
-	{
-		return (NULL);
-	}
-	str = malloc((sizeof(char *) * (cmp_nb_word(s, c) + 1)));
-	cmp_nb_caract(s, c, str);
-	while(s[i] == c && s[i] != '\0')
+	while (s[i] == c && s[i] != '\0')
 		i++;
 	while (s[i])
 	{
@@ -90,10 +87,27 @@ char	**ft_split(char const *s, char c)
 		str[m][mm] = '\0';
 		mm = 0;
 		m++;
-		while(s[i] == c && s[i] != '\0')
+		while (s[i] == c && s[i] != '\0')
 			i++;
 	}
 	str[m] = NULL;
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**str;
+	int		i;
+	int		m;
+	int		mm;
+
+	i = 0;
+	m = 0;
+	mm = 0;
+	str = malloc((sizeof(char *) * (cmp_nb_word(s, c) + 1)));
+	if (!str)
+		return (NULL);
+	cmp_nb_caract(s, c, str);
+	ft_assembleall(s, c, str);
 	return (str);
 }
 /*int main()
