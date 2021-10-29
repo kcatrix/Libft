@@ -6,42 +6,37 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 15:24:50 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/28 17:29:30 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/29 11:42:45 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	cmp_nb_word(char *s , char c)
+static int	cmp_nb_word(const char *s, char c)
 {
 	int	i;
 	int	word;
-	int	check;
-
-	if ((!s) || (!c)) 
-		return (0);
-	if ((!c) && s[0] == '\0')
+	
+	if (!s)
 		return (0);
 	word = 0;
-	check = 0;
 	i = 0;
+	while (s[i] == c && s[i] != '\0')
+	{
+		i++;
+	}
 	while (s[i])
 	{
-		while (s[i] == c || s[i] == '\t' || s[i] == ' ' || s[i] == '\n')
+		while (s[i] && (s[i] != c))
 			i++;
-		while (!(s[i] == c) && s[i])
-		{
+		word++;
+		while (s[i] == c && s[i] != '\0')
 			i++;
-			check++;
-		}
-		if (check > 0)
-			word++;
-		check = 0;
 	}	
 	return (word);
 }
 
-void	*cmp_nb_caract(char *s , char c, char **str)
+void	cmp_nb_caract(const char *s, char c, char **str)
 {
 	int		n;
 	int		i;
@@ -50,32 +45,63 @@ void	*cmp_nb_caract(char *s , char c, char **str)
 	n = 0;
 	i = 0;
 	m = 0;
-	str = malloc((sizeof(char *) * (cmp_nb_word(s, c) + 1)));
+	while (s[i] == c && s[i] != '\0')
+		i++;
 	while (s[i])
 	{
-		while (s[i] == c)
-			i++;
-		while (!(s[i] == c) && s[i])
+		while (s[i] && (s[i] != c))
 		{
 			i++;
 			n++;
 		}
-		if(s[i - 1] =! c)
-		{
-			str[m] = malloc(sizeof(char) * (n + 1));
-			m++;
-			n = 0;
-		}
+		str[m] = malloc(sizeof(char) * (n + 1));
+		m++;
+		n = 0;
+		while (s[i] == c && s[i] != '\0')
+			i++;
 	}
 }
-
-int main()
+char	**ft_split(char const *s, char c)
 {
-	char	s[] = "  llljel    suislachainelll";
-	char	c;
-	c = 'l';
-	//je
-	//suis
-	//achaine
-	printf("%d", cmp_nb_word(s, c));
+	char	**str;
+	int 	i;
+	int 	m;
+	int 	mm;
+
+	i = 0;
+	m = 0;
+	mm = 0;
+	if (!s)
+	{
+		return (NULL);
+	}
+	str = malloc((sizeof(char *) * (cmp_nb_word(s, c) + 1)));
+	cmp_nb_caract(s, c, str);
+	while(s[i] == c && s[i] != '\0')
+		i++;
+	while (s[i])
+	{
+		while (s[i] && (s[i] != c))
+		{
+			str[m][mm] = s[i];
+			i++;
+			mm++;
+		}
+		str[m][mm] = '\0';
+		mm = 0;
+		m++;
+		while(s[i] == c && s[i] != '\0')
+			i++;
+	}
+	str[m] = NULL;
+	return (str);
 }
+/*int main()
+{
+	char	tab[] = "jesuislachaine";
+	char	tab2 = 'c';
+	char	**str;
+
+	str = ft_split(tab, tab2);
+	printf("%s", str[0]);
+}*/
