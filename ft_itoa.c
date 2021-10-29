@@ -6,13 +6,13 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 08:42:00 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/28 14:47:24 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/29 13:55:52 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	len(long nb)
+static int	len(long nb)
 {
 	int	len;
 
@@ -31,20 +31,11 @@ int	len(long nb)
 	}
 	return (len);
 }
-
-char	*ft_itoa(int nb)
+static char *ft_assembleur(char *str, long n, int i)
 {
-	char	*str;
-	long	n;
-	int		i;
-
-	n = nb;
-	i = len(n);
-	str = (char *)malloc(sizeof(char) * (i + 1));
 	if (!str)
 		return (NULL);
-	str[i] = '\0';
-	i--;
+	str[i--] = '\0';
 	if (n == 0)
 	{
 		str[0] = '0';
@@ -61,4 +52,15 @@ char	*ft_itoa(int nb)
 		n = n / 10;
 	}
 	return (str);
+}
+char	*ft_itoa(int nb)
+{
+	char	*str;
+	long	n;
+	int		i;
+
+	n = nb;
+	i = len(n);
+	str = (char *)malloc(sizeof(char) * (i + 1));
+	return (ft_assembleur(str, n, i));
 }

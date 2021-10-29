@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 15:24:50 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/10/29 13:37:11 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/10/29 13:58:21 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	cmp_nb_word(const char *s, char c)
 	return (word);
 }
 
-int	cmp_nb_caract(const char *s, char c, char **str)
+static int	cmp_nb_caract(const char *s, char c, char **str)
 {
 	int		n;
 	int		i;
@@ -65,7 +65,7 @@ int	cmp_nb_caract(const char *s, char c, char **str)
 	return (0);
 }
 
-void	ft_assembleall(char const *s, char c, char **str)
+static void	ft_assembleall(char const *s, char c, char **str)
 {
 	int	i;
 	int	m;
