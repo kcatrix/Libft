@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/26 11:48:21 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/11/02 11:44:45 by kcatrix          ###   ########.fr       */
+/*   Created: 2021/11/02 16:09:35 by kcatrix           #+#    #+#             */
+/*   Updated: 2021/11/02 16:33:54 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	size_t	i;
-	size_t	j;
-	char	*str;
+	t_list	*toto;
+	t_list	*titi;
 
-	i = 0;
-	j = 0;
-	while (s[i])
-		i++;
-	if (len <= i)
-		str = malloc(sizeof(*s) * (len + 1));
-	else
-		str = malloc(sizeof(*s) * (i + 1));
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (s[i])
+	toto = *lst;
+	titi = *lst;
+	while (toto != NULL)
 	{
-		if (i >= start && j < len)
-		{
-			str[j++] = s[i];
-		}
-		i++;
+		titi = titi->next;
+		del(toto->content);
+		free(toto);
+		toto = titi;
 	}
-	str[j] = 0;
-	return (str);
+	*lst = NULL;
 }
