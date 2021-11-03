@@ -6,7 +6,7 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:39:45 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/11/02 15:25:02 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/11/03 08:36:56 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 	else
 	{
 		toto = *alst;
-		while(toto->next != NULL)
+		while (toto->next != NULL)
 			toto = toto->next;
 		toto->next = new;
 	}

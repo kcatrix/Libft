@@ -6,13 +6,13 @@
 /*   By: kcatrix <kcatrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 12:01:59 by kcatrix           #+#    #+#             */
-/*   Updated: 2021/11/02 14:10:53 by kcatrix          ###   ########.fr       */
+/*   Updated: 2021/11/03 08:32:53 by kcatrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
 	t_list	*toto;
 
